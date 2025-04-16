@@ -98,6 +98,37 @@ function App() {
               />
             </div>
           )}
+
+          {/* if selectedPokemon != null , will display it  */}
+          {selectedPokemon && (
+            <div>
+              <h2>Click to random</h2>
+              <img
+                onClick={handleRandom}
+                style={{ height: "100px" , marginLeft: "50px",  marginRight: "50px" }}
+                src="https://assets-v2.lottiefiles.com/a/d12e3930-1177-11ee-b96d-0be88c37ea6a/NQyTAsXQmZ.gif"
+              />
+            </div>
+          )}
+
+          {/* <div style={{}}>
+            <img
+              onClick={handleRandom}
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrd38H00j9Ue2nweAf4OKK3mkB4ZCnDy_DMQ&s"
+              alt=""
+              style={{ height: "100px" }}
+            />
+
+
+          {/* <div style={{}}>
+            <img
+              onClick={handleRandom}
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrd38H00j9Ue2nweAf4OKK3mkB4ZCnDy_DMQ&s"
+              alt=""
+              style={{ height: "100px" }}
+            />
+          </div> */}
+
           {randomPokemon && (
             <div className="">
               <h2>{randomPokemon.name}</h2>
@@ -110,33 +141,24 @@ function App() {
           )}
         </div>
 
-          <div
-            className=""
-            style={{
-              display: "flex",
-            }}
-          >
-            {pokemons.map((pokemon, index) => (
-              <div key={index}>
-                <h2>{pokemon.name}</h2>
-                <img
-                  src={pokemon.image}
-                  alt={pokemon.name}
-                  style={{ height: "200px" }}
-                  onClick={handleSelect}
-                />
-              </div>
-            ))}
-          </div>
-          <div style={{}}>
-            <img
-              onClick={handleRandom}
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrd38H00j9Ue2nweAf4OKK3mkB4ZCnDy_DMQ&s"
-              alt=""
-              style={{ height: "100px" }}
-            />
-          </div>
-
+        <div
+          className=""
+          style={{
+            display: "flex",
+          }}
+        >
+          {pokemons.map((pokemon, index) => (
+            <div key={index}>
+              <h2>{pokemon.name}</h2>
+              <img
+                src={pokemon.image}
+                alt={pokemon.name}
+                style={{ height: "200px" }}
+                onClick={handleSelect}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
